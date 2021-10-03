@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper and Scissor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+   <div class="container">
+       <div class="card">
+           <div class="card-body">
+
+                <!-- title section start -->
+               <h1 class="card-title">Rock, Paper and Scissor Game</h1>
+               <h2 class="card-subtitle my-2 text-muted">Let's Play Rock Paper Scissor</h2>
+               <h3 class="card-subtitle mt-5">Choose for Rock, Paper or Scissor:</h3>
+
+               <!-- button section start -->
+               <button class="btn btn-primary m-2 px-4 py-2" id="rock"><i class="fas fa-hand-rock    "></i></button>
+               <button class="btn btn-success m-2 px-4 py-2" id="paper"><i class="fas fa-hand-paper    "></i></button>
+               <button class="btn btn-danger m-2 px-4 py-2" id="scissor"><i class="fas fa-hand-scissors    "></i></button>
+                <button class="btn btn-secondary" id="check">check</button>
+
+           </div>
+       </div>
+   </div>
+    
+
+    <script>
+
+        // player input section
+        var playerChoice, computerChoice;
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) ) + min;
+        }
+        $(document).ready(function(){
+            $('#rock').click(()=>   
+          {
+            choice = 'rock';
+            computerChoice = getRndInteger(1,3);
+          }
+         );
+            $('#paper').click(()=>   
+          {
+            choice = 'paper';
+            computerChoice = getRndInteger(1,3);
+          }
+         );
+            $('#scissor').click(()=>   
+          {
+            choice = 'scissor';
+            computerChoice = getRndInteger(1,3);
+          }
+         );
+            $('#check').click(()=>   
+          {
+            $(".card-body").append(computerChoice + " ");
+          }
+         );
+          
+        });
+
+    </script>
+</body>
+</html>
