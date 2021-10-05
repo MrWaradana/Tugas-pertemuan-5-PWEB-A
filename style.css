@@ -1,0 +1,29 @@
+#rock, #paper, #scissor{
+    transition: all .4s ease;
+}
+
+#rock:hover,#paper:hover,#scissor:hover{
+    transform: scale(1.125);
+}
+
+.footer-title img{
+    width: 48px;
+}
+
+.footer-title a{
+    color: black;
+}
+
+.footer-title a:hover{
+    color: rgb(66, 66, 66);
+    text-decoration: none;
+}
+
+@media (max-width:768px) {
+    .footer-title{
+        font-size: 24px !important;
+    }
+    .footer-title img{
+        width: 32px;
+    }
+}
