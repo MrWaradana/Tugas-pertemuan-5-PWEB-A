@@ -52,7 +52,24 @@
     </div>
   </div>
 
-  <footer class="footer">
+
+  <!-- audio section start -->
+  <audio id="win-audio">
+    <source src="click.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="draw-audio">
+    <source src="draw.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="lose-audio">
+    <source src="lose.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  <!-- footer section start -->
+  <footer class="footer fixed-bottom">
     <div class="container-fluid">
       <div class="row d-flex flex-row justify-content-center">
         <div class="card text-center">
@@ -93,23 +110,41 @@
     });
   }
 
+  // sound effects
+  function winAudio(){
+    $("#win-audio")[0].play();
+  }
+  function drawAudio(){
+    $("#draw-audio")[0].play();
+  }
+  function loseAudio(){
+    $("#lose-audio")[0].play();
+  }
+
   //game result
   function result() {
     var result;
     if (computerChoice == playerChoice) {
       result = "Draw";
+      drawAudio();
     } else if (playerChoice == "Rock" && computerChoice == "Paper") {
       result = "Computer Win!, You Lose!";
+      loseAudio();
     } else if (playerChoice == "Rock" && computerChoice == "Scissor") {
       result = "You Win!";
+      winAudio();
     } else if (playerChoice == "Paper" && computerChoice == "Scissor") {
       result = "Computer Win!, You Lose!";
+      loseAudio()
     } else if (playerChoice == "Paper" && computerChoice == "Rock") {
       result = "You Win!";
+      winAudio();
     } else if (playerChoice == "Scissor" && computerChoice == "Rock") {
       result = "Computer Win!, You Lose!";
+      loseAudio()
     } else if (playerChoice == "Scissor" && computerChoice == "Paper") {
       result = "You Win!";
+      winAudio();
     }
     $(document).ready(function () {
       $("#result").text(result);
