@@ -1,3 +1,11 @@
+html{
+    min-height: 100%;
+}
+
+#result{
+    padding-bottom: 25vh;
+}
+
 #rock, #paper, #scissor{
     transition: all .4s ease;
 }
